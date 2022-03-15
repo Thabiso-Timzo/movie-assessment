@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Thabiso-Timzo/movie-assessment/issues"
   },
-  "homepage": "https://github.com/Thabiso-Timzo/movie-assessment#readme"
+  "homepage": "https://github.com/Thabiso-Timzo/movie-assessment#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }

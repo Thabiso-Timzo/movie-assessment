@@ -1,0 +1,17 @@
+nav {
+    background: rgba(255, 187, 0, 0.9);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    z-index: 99;
+}
+
+.nav-fantastic-films {
+
+}
+
+.nav-fantastic-films .nav-logo {
+
+}
