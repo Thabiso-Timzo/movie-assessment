@@ -1,17 +1,113 @@
-nav {
-    background: rgba(255, 187, 0, 0.9);
-    padding: 20px;
+.nav-main-container {
+    margin: -8px -8px 0px -8px;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-first-container {
+    margin-top: 0px;
+    width: 10%;
+    height: 80px;
+    background-color: black;
+}
+
+.fas {
+    cursor: pointer;
+}
+
+.menu-icon .fa-times {
+    transform: rotate(360deg);
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-icon .fa-bars {
+    transform: rotate(180deg);
+    transition: all 0.2s ease-in-out;
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+}
+
+.logo:hover {
+    color: rgb(102, 102, 102);
+}
+
+.nav-left-link p {
+    line-height: 0.1;
+}
+
+.nav-second-container {
+    margin-top: 0px;
+    width: 90%;
+    height: 80px;
+    background-color: orange;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-list {
+    list-style-type: none;
     display: flex;
-    justify-content: center;
-    color: #fff;
-    position: relative;
-    z-index: 99;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.nav-fantastic-films {
-
+.link-btn {
+    color: white;
 }
 
-.nav-fantastic-films .nav-logo {
+@media screen and (max-width: 600px) {
+    .menu-icon {
+        display: block;
+        float: right;
+        margin-top: 15px;
+        margin-right: 15px;
+    }
 
+    .nav-first-container {
+        margin-top: 0px;
+        width: 25%;
+        height: 80px;
+        background-color: black;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        background-color: rgba(0,0,0,0.7);
+        padding: 20px;
+        right: 0;
+        top: 64px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .menu-list li {
+        margin-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-list li:last-child {
+        margin-bottom: 0px;
+    }
+
+    .menu-list li a, .menu-list li:last-child {
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+
+    .menu-list.close {
+        right: -100%;
+        transition: all 0.5s ease-in-out;
+    }
 }

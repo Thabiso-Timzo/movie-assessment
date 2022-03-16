@@ -4,8 +4,8 @@
         url: "/"
     },
     {
-        title: "PopularFilms",
-        url: "/popularFilms"
+        title: "Movies",
+        url: "/movies"
     },
     {
         title: "About",
