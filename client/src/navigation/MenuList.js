@@ -4,11 +4,11 @@
         url: "/"
     },
     {
-        title: "Movies",
+        title: "Popular Films",
         url: "/movies"
     },
     {
-        title: "About",
+        title: "About The developer",
         url: "/about"
     }
 ]
