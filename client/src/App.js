@@ -6,6 +6,7 @@ import NavigationBar from './navigation/NavigationBar'
 import Home from './pages/Home'
 import PopularFilms from './pages/PopularFilms'
 import About from './pages/About'
+import MovieDetailedPage from './pages/MovieDetailedPage'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/about" component={About} />
         <Route path="/movies" component={PopularFilms} />
+        <Route path="/movie/:movieId" component={MovieDetailedPage, null} />
       </Switch>
     </BrowserRouter>
   );
