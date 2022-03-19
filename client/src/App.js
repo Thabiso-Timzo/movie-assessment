@@ -1,7 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-//import './App.css'
 import NavigationBar from './navigation/NavigationBar'
 import Home from './pages/Home'
 import PopularFilms from './pages/PopularFilms'

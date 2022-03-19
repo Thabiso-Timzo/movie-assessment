@@ -1,0 +1,19 @@
+.popular-film-container {
+    width: 100%;
+    margin: 0;
+}
+
+.popular-film-hidden-div {
+    margin-top: 0;
+    height: 20px;
+}
+
+.movies-child-container {
+    width: '85%'; 
+    margin: '1rem auto';
+}
+
+.popular-film-btn {
+    display: flex;
+    justify-content: center;
+}

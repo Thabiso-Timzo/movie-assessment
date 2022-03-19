@@ -1,20 +1,22 @@
 import React from 'react'
-import { Col } from 'antd'
 import { Link } from 'react-router-dom'
+
+import './GridCard.css'
 
 function GridCard(props) {
   return (
-    <Col lg={6} md={8} xs={24}>
-        <div style={{ position: 'relative' }}>
-            <a href={`/movie/${props.movieId}`}>
-                <img  
-                    style={{ width: '20%', height: '320px'}} 
-                    alt=""
-                    src={props.image}
-                />
-            </a>
+    <div className="grid-container">
+      <Link to={`/movie/${props.movieId}`}>
+        <div className="title">
+          <img  
+            className="grid-image" 
+            alt=""
+            src={props.image}
+          />
+          {/*<p>{props.title}</p>*/}
         </div>
-    </Col>
+      </Link>
+    </div>
   )
 }
 

@@ -1,0 +1,13 @@
+.grid-container {
+    position: relative;
+}
+
+.grid-image {
+    width: 20%;
+    height: 320px;
+    float: right;
+    margin-top: 2px;
+    margin-left: 10px;
+    margin-right: 70px;
+    margin-bottom: 50px;
+}
