@@ -63,9 +63,9 @@ function PopularFilms() {
             })}
           </div>
           <br />
-          {/*<div className="popular-film-btn">
+          <div className="popular-film-btn">
             <button onClick={handleClick}>More Movies</button>
-          </div>*/}
+          </div>
         </div>
       </div>
     </>
