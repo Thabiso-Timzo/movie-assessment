@@ -15,6 +15,7 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(cookieParser())
 app.use('/api/users', require('./routes/users'));
+app.use('/api/favourite/', require('./routes/favourite'));
 
 app.use('/uploads', express.static('uploads'))
 

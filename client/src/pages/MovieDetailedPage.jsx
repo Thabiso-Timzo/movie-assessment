@@ -5,6 +5,7 @@ import './MovieDetailedPage.css'
 import { API_KEY, API_URL, IMAGE_URL } from '../components/Config'
 import MainImage from '../components/MainImage'
 import GridCard from '../components/GridCard'
+import Favourite from '../components/Favourite'
 
 function MovieDetailedPage(props) {
   const [Movie, setMovie] = useState([])
@@ -43,7 +44,7 @@ function MovieDetailedPage(props) {
         }
         <div className="movie-detailed-container">
           <div className="movie-inner-container">
-            <button>Add to Favourite</button>
+            <Favourite userFrom={localStorage.getItem('userId')} movieId={movieId} movieInfo={Movie} />
           </div>
           <Descriptions title="Movie info" bordered>
             <Descriptions.Item label="Title">{Movie.original_title}</Descriptions.Item>
