@@ -29,3 +29,9 @@
 .popular-film-btn:hover {
     background-color: rgb(139, 120, 58);
 }
+
+@media screen and (max-width: 800px) {
+    .popular-film-btn {
+        width: 100%;
+    }
+}

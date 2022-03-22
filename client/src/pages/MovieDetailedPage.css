@@ -50,3 +50,9 @@ tr:nth-child(even) {
 .movie-lower-btn:hover {
     background-color: rgb(139, 120, 58);
 }
+
+@media screen and (max-width: 800px) {
+    .movie-lower-btn {
+        width: 100%;
+    }
+}
