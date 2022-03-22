@@ -10,14 +10,6 @@
     {
         title: "About The developer",
         url: "/about"
-    },
-    {
-        title: "Login",
-        url: "/login"
-    },
-    {
-        title: "Register",
-        url: "/register"
     }
 ]
 

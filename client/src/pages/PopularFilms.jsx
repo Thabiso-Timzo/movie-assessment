@@ -63,8 +63,8 @@ function PopularFilms() {
             })}
           </div>
           <br />
-          <div className="popular-film-btn">
-            <button onClick={handleClick}>More Movies</button>
+          <div>
+            <button className="popular-film-btn" onClick={handleClick}>More Movies</button>
           </div>
         </div>
       </div>
