@@ -1,54 +1,36 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import './NavigationBar.css'
-import MenuList from './MenuList'
 
-function NavigationBar() {
-    const [clicked, setClick] = useState(false);
+const NavigationBar = () => {
+    const [show, setShow] = useState(true)
 
-    const menuList = MenuList.map(({url, title}, index) => {
-        return (
-            <li key={index}>
-                <NavLink 
-                    exact 
-                    to={url}
-                    style={{
-                        textDecoration:"none",
-                        color: "grey",
-                        fontWeight: 700,
-                        fontSize: 18,
-                        paddingTop: 10,
-                    }}
-                >
-                    {title}
-                </NavLink>
-            </li>
-        )
-    })
-
-    const handleClick = () => {
-        setClick(!clicked)
+    function showSwitch() {
+        return setShow(!show)
     }
 
-    return (
-        <div className="nav-main-container">
-            <div className="nav-first-container">
-                <NavLink className="nav-left-link" to="/" style={{textDecoration:"none"}}>
-                   <p className="logo">Fantastic</p> 
-                   <p className="logo">Films</p> 
-                </NavLink>
-            </div>
-            <div className="nav-second-container">
-                <div className="menu-icon" onClick={handleClick}>
-                    <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
-                </div>
-                <ul className={clicked ? "menu-list" : "menu-list close"}>
-                    {menuList}
-                </ul>
-            </div>
+  return (
+    <div className="navbar"> 
+        <div className="logo">
+            Fantastic Films
         </div>
-    )
-} 
+        <div className={show ? "links active" : "links"}>
+            <Link onClick={() => showSwitch()} to="/">Home</Link>
+            <Link onClick={() => showSwitch()} to="/movies">Movies</Link>
+            <Link onClick={() => showSwitch()} to="/about">Developer</Link>
+            <Link onClick={() => showSwitch()} to="/login">Login</Link>
+        </div>
+        <div 
+            className={show ? "bars-button active" : "bars-button"} 
+            onClick={() => showSwitch()}
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+  )
+}
 
 export default NavigationBar
