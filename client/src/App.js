@@ -2,10 +2,10 @@ import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import NavigationBar from './navigation/NavigationBar'
-import Home from './pages/Home'
-import PopularFilms from './pages/PopularFilms'
-import About from './pages/About'
-import MovieDetailedPage from './pages/MovieDetailedPage'
+import Home from './pages/home/Home'
+import PopularFilms from './pages/popular/PopularFilms'
+import About from './pages/about/About'
+import MovieDetailedPage from './pages/movies/MovieDetailedPage'
 
 function App() {
   return (
