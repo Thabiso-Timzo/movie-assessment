@@ -5,12 +5,12 @@
 
 .popular-film-hidden-div {
     margin-top: 0;
-    height: 100px;
+    height: 10px;
 }
 
 .movies-child-container {
-    width: '85%'; 
-    margin: '1rem auto';
+    width: 85%; 
+    margin: 1rem auto;
 }
 
 .popular-film-btn {
