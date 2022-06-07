@@ -10,7 +10,7 @@ function Home() {
     <div className="home-container">
         <h2>Welcome to Fantastic Films</h2>
         <br />
-        <Link to="/movies">
+        <Link to="/movies" className="btn-container">
           <button className="movie-btn">Browse films</button>
         </Link> 
     </div>
