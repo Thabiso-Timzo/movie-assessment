@@ -3,11 +3,6 @@
     margin: 0;
 }
 
-.popular-film-hidden-div {
-    margin-top: 0;
-    height: 10px;
-}
-
 .movies-child-container {
     width: 85%; 
     margin: 1rem auto;
@@ -16,7 +11,7 @@
 .popular-film-btn {
     border: none;
     color: white;
-    background-color: orange;
+    background-color: rgb(66, 54, 54);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
