@@ -6,9 +6,9 @@ function About() {
   return (
     <div className="about-container">
       <h2><u>Developer information</u></h2>
-      <p className="about-text"><span>Name of the Compamy:</span> Addmore Digital<br />
-      <span>Email:</span> info@addmoredigital.co.za<br />
-      <span>Phone:</span> 067 032 2010
+      <p className="about-text"><span>Name and surname:</span> Thabiso Hlatshwayo<br />
+      <span>Email:</span> mr.tt.hlatshwayo@gmail.com<br />
+      <span>Phone:</span> 061 456 7028<br />
       </p>
     </div>
   )
