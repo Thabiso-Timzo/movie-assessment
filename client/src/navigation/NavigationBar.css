@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 4%;
-    background-color: black;
+    background-color: rgb(66, 54, 54);
 }
 
 .bars-button {
@@ -87,6 +87,7 @@
         background-color: rgba(0, 0, 0, 0.8);
         align-items: center;
         justify-content: center;
+        z-index: 2;
     }
 
     .bars-button {
