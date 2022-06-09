@@ -4,14 +4,14 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+require('dotenv/config');
 
-const MongoDBConnect = require('./config/database/db');
+const MongoDBConnect = require('./config/db');
 const userRoutes = require('./routes/users/users')
 
 const app = express();
 const port = process.env.PORT || 8000;
 MongoDBConnect();
-require('dotenv/config');
 
 app.use(cors());
 app.options('*', cors());
