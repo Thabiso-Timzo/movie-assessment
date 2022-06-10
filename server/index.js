@@ -4,9 +4,11 @@ const cors = require('cors')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const colors = require('colors');
 require('dotenv/config');
 
 const MongoDBConnect = require('./config/db');
+const { errorHandler } = require('./middleware/errorHandler/errorHandle')
 const userRoutes = require('./routes/users/users')
 
 const app = express();
@@ -25,8 +27,10 @@ app.use(cookieParser());
 //use this to show the image you have in node js
 app.use('/uploads', express.static('uploads'));
 
+app.use(errorHandler)
+
 app.use('/api/users', userRoutes);
 
 app.listen(port, () => {
- console.log(`Server is up and running on port: ${port}`);
+ console.log(`Server is up and running on port: ${port}`.white.bold.underline);
 })
