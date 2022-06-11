@@ -1,20 +1,33 @@
-const { User } = require('../../models/user-schema/UserSchema')
+const jwt = require('jsonwebtoken');
+const asycHandler = require('express-async-handler');
+const User = require('../../models/user-schema/UserSchema');
 
-let auth = (req, res, next) => {
-  let token = req.cookies.w_auth;
+const protect = asycHandler(async (req, res, next) => {
+  let token;
 
-  User.findByToken(token, (err, user) => {
-    if (err) throw err;
-    if (!user)
-      return res.json({
-        isAuth: false,
-        error: true
-      });
+  if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
+    try {
+      // Get  token from header
+      token = req.headers.authorization.split(' ')[1];
 
-    req.token = token;
-    req.user = user;
-    next();
-  });
-};
+      // Verify token
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-module.exports = { auth };
+      // Get user from the token
+      req.user = await User.findById(decoded.id).select('-password');
+
+      next();
+    } catch (error) {
+      console.log(error);
+      res.status(401)
+      throw new Error('Not Authorized');
+    }
+  }
+
+  if (!token) {
+    res.status(401)
+    throw new Error('Not Authorized, no token found');
+  }
+})
+
+module.exports = { protect }
