@@ -61,6 +61,21 @@
     z-index: -1;
 } 
 
+.logout-btn {
+    outline: none;
+    border: none;
+    width: 75px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(66, 54, 54);
+}
+
+.logout-btn:hover {
+    background-color: #607d8b;
+}
+
 @media only screen and (max-width: 981px) {
     .navbar {
         padding: 25px 3%;
@@ -119,5 +134,15 @@
     .bars-button.active span:nth-child(3) {
         position: absolute;
         transform: rotate(45deg);
+    }
+
+    .logout-btn {
+        outline: none;
+        border: none;
+        width: 55px;
+        height: 25px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
     }
 }

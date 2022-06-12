@@ -1,13 +1,25 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { logout, reset } from '../redux/auth/authSlice'
 
 import './NavigationBar.css'
 
 const NavigationBar = () => {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(true);
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { user } = useSelector((state) => state.auth);
 
     function showSwitch() {
-        return setShow(!show)
+        return setShow(!show);
+    }
+
+    const onLogout = () => {
+        dispatch(logout());
+        dispatch(reset());
+        navigate('/')
     }
 
   return (
@@ -16,10 +28,21 @@ const NavigationBar = () => {
             Fantastic Films
         </div>
         <div className={show ? "links active" : "links"}>
-            <Link onClick={() => showSwitch()} to="/">Home</Link>
-            <Link onClick={() => showSwitch()} to="/movies">Movies</Link>
-            <Link onClick={() => showSwitch()} to="/about">Developer</Link>
-            <Link onClick={() => showSwitch()} to="/login">Login</Link>
+            {user ? (
+                <>
+                    <Link onClick={() => showSwitch()} to="/">Home</Link>
+                    <Link onClick={() => showSwitch()} to="/about">Developer</Link>
+                    <Link onClick={() => showSwitch()} to="/movies">Movies</Link>
+                    <button className="logout-btn" onClick={onLogout}>Logout</button>
+                </>
+            ) : (
+                <>    
+                    <Link onClick={() => showSwitch()} to="/">Home</Link>
+                    <Link onClick={() => showSwitch()} to="/about">Developer</Link>
+                    <Link onClick={() => showSwitch()} to="/login">Login</Link>
+                    <Link onClick={() => showSwitch()} to="/register">Register</Link>
+                </>
+            )}
         </div>
         <div 
             className={show ? "bars-button active" : "bars-button"} 
