@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FaFacebookSquare } from "react-icons/fa"
 import { FcGoogle } from "react-icons/fc";
 import { useSelector, useDispatch } from 'react-redux'
@@ -11,6 +11,7 @@ import { login, reset } from '../../redux/auth/authSlice'
 import Spinner from '../../components/spinner/Spinner'
 
 const Login = () => {
+    const history = useHistory();
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -18,7 +19,6 @@ const Login = () => {
 
     const { email, password } = formData;
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { 
@@ -35,12 +35,12 @@ const Login = () => {
         }
 
         if (isSuccess || user) {
-            navigate('/movies');
+            history.push('/movies');
         }
 
         dispatch(reset());
 
-    }, [user, isError, isSuccess, message, navigate, dispatch]);
+    }, [user, isError, isSuccess, message, history, dispatch]);
 
     const onChange = (e) => {
         setFormData((prevState) => ({

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../redux/auth/authSlice'
 
@@ -8,7 +8,7 @@ import './NavigationBar.css'
 const NavigationBar = () => {
     const [show, setShow] = useState(true);
 
-    const navigate = useNavigate();
+    const history = useHistory();
     const dispatch = useDispatch();
     const { user } = useSelector((state) => state.auth);
 
@@ -19,7 +19,7 @@ const NavigationBar = () => {
     const onLogout = () => {
         dispatch(logout());
         dispatch(reset());
-        navigate('/')
+        history.push('/')
     }
 
   return (

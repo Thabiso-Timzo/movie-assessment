@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
 
@@ -9,6 +9,7 @@ import { register, reset } from '../../redux/auth/authSlice'
 import Spinner from '../../components/spinner/Spinner'
 
 const Register = () => {
+    const history = useHistory();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -18,7 +19,6 @@ const Register = () => {
 
     const { name, email, password, password2 } = formData;
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { 
@@ -35,12 +35,12 @@ const Register = () => {
         }
 
         if (isSuccess || user) {
-            navigate('/login');
+            history.push('/login');
         }
 
         dispatch(reset());
 
-    }, [user, isError, isSuccess, message, navigate, dispatch]);
+    }, [user, isError, isSuccess, message, history, dispatch]);
 
     const onChange = (e) => {
         setFormData((prevState) => ({
