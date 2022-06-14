@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import './PopularFilms.css'
 import { API_KEY, API_URL, IMAGE_URL } from '../../components/config/Config'
@@ -8,6 +10,16 @@ import GridCard from '../../components/grid-card/GridCard'
 function PopularFilms() {
   const [Movies, setMovies] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
+
+  const history = useHistory();
+
+  const { user } = useSelector((state) => state.auth)
+
+  useEffect(() => {
+    if (!user) {
+      history.push('/login')
+    }
+  },[user, history])
 
   useEffect(() => { 
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
