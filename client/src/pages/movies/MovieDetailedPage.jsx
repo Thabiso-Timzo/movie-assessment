@@ -42,6 +42,11 @@ function MovieDetailedPage(props) {
             text={Movie.overview}
           />
         }
+        <div className="favourite-btn">
+          <button>
+            Add to Favourite
+          </button>
+        </div>
         <div className="movie-detailed-container">
           <table>
             <tr>
@@ -81,7 +86,7 @@ function MovieDetailedPage(props) {
             </tr>
           </table>
           <br />
-          <div>
+          <div style={{display: 'flex', justifyContent: 'center'}}>
             <button className="movie-lower-btn" onClick={handleClick}>Actor/Actress View</button>
           </div>
           <br />

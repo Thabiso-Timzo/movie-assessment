@@ -13,6 +13,11 @@
     justify-content: center;
 }
 
+.favourite-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
