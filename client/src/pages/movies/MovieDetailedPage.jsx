@@ -42,11 +42,6 @@ function MovieDetailedPage(props) {
             text={Movie.overview}
           />
         }
-        <div className="favourite-btn">
-          <button>
-            Add to Favourite
-          </button>
-        </div>
         <div className="movie-detailed-container">
           <table>
             <tr>
