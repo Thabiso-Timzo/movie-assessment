@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { FaFacebookSquare } from "react-icons/fa"
-import { FcGoogle } from "react-icons/fc";
 import { useSelector, useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
  
@@ -61,7 +59,7 @@ const Login = () => {
     }
 
     if (isLoading) {
-        return <Spinner />
+        return <Spinner style={{alignItems: 'center'}} />
     }
 
   return (
@@ -95,11 +93,6 @@ const Login = () => {
                             onChange={onChange} 
                         />
                     </div>
-                    <div className="remember">
-                        <label htmlFor="">
-                            <input type="checkbox" /> Remember me
-                        </label>
-                    </div>
                     <div className="input-box">
                         <button>Login</button>
                     </div>
@@ -107,11 +100,6 @@ const Login = () => {
                         <p>Don't have an account? <Link to='/register'>Register</Link></p>
                     </div>
                 </form>
-                <h3>Or Login with...</h3>
-                <ul className="social">
-                    <li><FaFacebookSquare color={'#0083EE'}/></li>
-                    <li><FcGoogle /></li>
-                </ul>
             </div>
         </div>
     </section>
